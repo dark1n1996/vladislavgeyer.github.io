@@ -8,6 +8,7 @@ import './pages/style.css';
 
 (() => {
     const placesList = document.querySelector('.places-list');
+    
     const validationWords = {
       validationLength: 'Должно быть от 2 до 30 символов',
       requiredText: 'Это обязательное поле',
@@ -21,8 +22,8 @@ import './pages/style.css';
     const myObj = [];
     
     const authorization = '32e69409-4ce5-4daf-a930-e1c08afa7870';
-    
-    const config = 'https://praktikum.tk/cohort9/';
+
+    const config = process.env.NODE_ENV === 'development' ? 'http://praktikum.tk/cohort9/' : 'https://praktikum.tk/cohort9/';
     
     const api = new Api (config, authorization);
     
